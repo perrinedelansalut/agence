@@ -116,7 +116,7 @@ public class LoginController extends HttpServlet
 		}
 		else if (action.equals("delete")) 
 		{
-			int id = Integer.parseInt(request.getParameter("id"));
+			Integer id = Integer.parseInt(request.getParameter("id"));
 
 			Login login = loginDao.findById(id);
 
