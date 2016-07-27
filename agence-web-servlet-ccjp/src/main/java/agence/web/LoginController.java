@@ -19,7 +19,6 @@ import model.Login;
 
 
 @WebServlet("/login")
-
 public class LoginController extends HttpServlet 
 {
 	private LoginDao loginDao = new LoginDaoSql();
@@ -110,7 +109,7 @@ public class LoginController extends HttpServlet
 			
 			request.setAttribute("logins", loginDao.findAll());
 
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("logins.jsp");
 
 			rd.forward(request, response);
 			
