@@ -103,7 +103,6 @@ public class ClientController extends HttpServlet {
             client.setNumeroTel(numTel);
             client.setNumeroFax(numFax);
             client.setEmail(eMail);
-            client.setSiret(siret);
 
             if (id == null)
             {

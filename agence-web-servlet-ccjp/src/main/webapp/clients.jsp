@@ -19,6 +19,8 @@
 			<td>Mail</td>
 			<td>Siret</td>
 			<td>Id Adresse</td>
+			<td>Edition</td>
+			<td>Suppression</td>
 		</tr>
 
 		<%
@@ -37,7 +39,14 @@
 				<td><%=client.getEmail() %></td>
 				<td><%if (client.getSiret()!=0) {out.print(client.getSiret());} else {out.print("NA");}%></td>
 				<td><%=client.getAdresse().getIdAdd() %></td>
+				<td><a href="client?action=edit&id=<%=client.getIdCli() %>">Editer</a></td>
+				<td><a href="client?action=delete&id=<%=client.getIdCli() %>">Supprimer</a></td>
 			</tr>
 		<% } %>
+		
+		<tr>
+			<td colspan="10"><a href="client?action=add">Ajouter un client</a></td>
+		</tr>
+	</table>
 </body>
 </html>

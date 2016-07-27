@@ -86,6 +86,17 @@
 	        siretForm = siret.toString();
 	    }
 	    
+// 	    Integer idAdd = client.getAdresse().getIdAdd();
+// 	    String idAddForm;
+// 	    if (idAdd == null)
+// 	    {
+// 	        idAddForm = "";
+// 	    }
+// 	    else
+// 	    {
+// 	        idAddForm = idAdd.toString();
+// 	    }
+	    
 	%>
 	<fieldset>
 		<legend>
