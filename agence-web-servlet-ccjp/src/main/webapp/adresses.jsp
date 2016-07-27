@@ -17,8 +17,8 @@
 			<td>Code Postal</td>
 			<td>Ville</td>
 			<td>Pays</td>
-			<td>Editer</td>
-			<td>Supprimer</td>
+			<td>Edition</td>
+			<td>Suppression</td>
 		</tr>
 
 		<%

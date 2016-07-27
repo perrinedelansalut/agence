@@ -40,9 +40,9 @@ public class AdresseController extends HttpServlet {
 
 			rd.forward(request, response);
 		} else if (action.equals("edit")) {
-			Integer idAdd = Integer.parseInt(request.getParameter("idAdd"));
+			Integer id = Integer.parseInt(request.getParameter("idAdd"));
 
-			Adresse adresse = adresseDao.findById(idAdd);
+			Adresse adresse = adresseDao.findById(id);
 
 			request.setAttribute("adresse", adresse);
 
@@ -74,7 +74,7 @@ public class AdresseController extends HttpServlet {
 
 			Adresse adresseObj = null;
 
-			if (id == 0) {
+			if (id == null) {
 				adresseObj = new Adresse();
 			} else {
 				adresseObj = adresseDao.findById(id);
@@ -85,7 +85,7 @@ public class AdresseController extends HttpServlet {
 			adresseObj.setVille(ville);
 			adresseObj.setPays(pays);
 
-			if (id == 0) {
+			if (id == null) {
 				adresseDao.create(adresseObj);
 			} else {
 				adresseDao.update(adresseObj);
