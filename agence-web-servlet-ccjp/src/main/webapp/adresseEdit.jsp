@@ -84,7 +84,7 @@
 			<table>
 				<tr>
 					<td>Id</td>
-					<td><input type="text" name="id" value="<%=idAddForm%>"
+					<td><input type="text" name="id" value="<%=idAddForm%>" disabled="disabled"
 						<%if (idAddForm.equals(""))
             {
                 out.print("disabled");
