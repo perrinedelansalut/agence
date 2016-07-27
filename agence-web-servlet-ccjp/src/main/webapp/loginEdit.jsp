@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="model.Login"%>
+	<%@ page import="model.Login"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Edition Login</title>
+<title>Edition Logins</title>
 </head>
 <body>
 	<%
@@ -13,7 +14,7 @@
 		/* Tests */
 		Integer idLog = login.getIdLog();
 		String idLogForm;
-		if (idLog == 0) {
+		if (idLog == null) {
 			idLogForm = "";
 		} else {
 			idLogForm = idLog.toString();
@@ -36,10 +37,10 @@
 		}
 		Integer adminLog = login.getAdmin();
 		String adminLogForm;
-		if (adminLog == 0) {
-			adminLogForm = "";
+		if (adminLog == null) {
+			adminLogForm = "0";
 		} else {
-			adminLogForm = adminLog.toString();
+			adminLogForm = "1";
 		}
 	%>
 	<fieldset>
@@ -74,8 +75,11 @@
 				</tr>
 				<tr>
 					<td>Admin</td>
-					<td><input type="checkbox" name="admin"
-						value="<%=adminLogForm%>" /></td>
+					<td><input type="radio" name="admin" value="oui">oui
+					<%if (adminLogForm.equals("1")) {out.print("checked");}%>
+					<input type="radio" name="admin" value="non">non
+					<%if (adminLogForm.equals("0")) {out.print("checked");}%>
+						</td>
 				</tr>
 				
 				<tr>

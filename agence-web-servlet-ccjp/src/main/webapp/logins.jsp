@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>Liste des Logins</title>
 </head>
 <body>
 	<!-- Création d'un tableau de bordure 1 -->
