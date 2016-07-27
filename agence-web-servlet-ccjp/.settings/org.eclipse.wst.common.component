@@ -2,6 +2,9 @@
     <wb-module deploy-name="agence-web-servlet-ccjp">
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="agence-data-ccjp.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/agence-data-ccjp/agence-data-ccjp">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="agence-web-servlet-ccjp"/>
         <property name="java-output-path" value="/agence-web-servlet-ccjp/build/classes"/>
     </wb-module>

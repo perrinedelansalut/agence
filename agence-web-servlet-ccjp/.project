@@ -3,6 +3,7 @@
 	<name>agence-web-servlet-ccjp</name>
 	<comment></comment>
 	<projects>
+		<project>agence-data-ccjp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
