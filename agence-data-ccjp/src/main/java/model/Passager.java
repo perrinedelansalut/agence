@@ -30,6 +30,7 @@ public class Passager {
 		this.idPas = idPas;
 
 	}
+	public Passager(){}
 
 	public int getIdPas() {
 		return idPas;
