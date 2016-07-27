@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Edition Logins</title>
+<title>Creation Logins</title>
 </head>
 <body>
 	<%
@@ -14,7 +14,7 @@
 		/* Tests */
 		Integer idLog = login.getIdLog();
 		String idLogForm;
-		if (idLog == null) {
+		if (idLog == 0) {
 			idLogForm = "";
 		} else {
 			idLogForm = idLog.toString();
@@ -37,10 +37,10 @@
 		}
 		Integer adminLog = login.getAdmin();
 		String adminLogForm;
-		if (adminLog == null) {
-			adminLogForm = "0";
+		if (adminLog == 0) {
+			adminLogForm = "";
 		} else {
-			adminLogForm = "1";
+			adminLogForm = adminLog.toString();
 		}
 	%>
 	<fieldset>
@@ -52,7 +52,7 @@
 					out.print("Edition");
 				}
 			%>
-			de l'élève
+			Login
 		</legend>
 		<form action="login" method="post">
 			<input type="hidden" name="action" value="update" />
@@ -60,9 +60,7 @@
 				<tr>
 					<td>Id</td>
 					<td><input type="text" name="id" value="<%=idLogForm%>"
-						<%if (idLogForm.equals("")) {
-				out.print("disabled");
-			}%> /></td>
+						<%out.print("disabled");%> /></td>
 				</tr>
 				<tr>
 					<td>Login</td>
@@ -75,10 +73,9 @@
 				</tr>
 				<tr>
 					<td>Admin</td>
-					<td><input type="radio" name="admin" value="oui">oui
-					<%if (adminLogForm.equals("1")) {out.print("checked");}%>
-					<input type="radio" name="admin" value="non">non
-					<%if (adminLogForm.equals("0")) {out.print("checked");}%>
+					<td><input type="text" name="admin"
+						value="<%=adminLogForm%>" /></td>
+					
 						</td>
 				</tr>
 				
