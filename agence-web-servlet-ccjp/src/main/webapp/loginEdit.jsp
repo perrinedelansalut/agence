@@ -59,8 +59,8 @@
 			<table>
 				<tr>
 					<td>Id</td>
-					<td><input type="text" name="id" value="<%=idLogForm%>"
-						<%out.print("disabled");%> /></td>
+					<input type="hidden" name="id" value="<%=idLogForm%>" />
+					<td><%=idLogForm%></td>
 				</tr>
 				<tr>
 					<td>Login</td>

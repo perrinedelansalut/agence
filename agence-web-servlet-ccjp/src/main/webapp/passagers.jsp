@@ -15,8 +15,9 @@
 			<td>Id</td>
 			<td>Nom</td>
 			<td>Prénom</td>
+			<td>Adresse</td>
 			<td>Edition</td>
-			<td>Suppression</td>
+		<td>Suppression</td> 
 			
 		</tr>
 
@@ -31,15 +32,18 @@
 				<td><%=passager.getIdPas() %></td>
 				<td><%=passager.getNom() %></td>
 				<td><%=passager.getPrenom() %></td>
+				<td><%=passager.getAdresse() %></td>
 				<td><a href="passager?action=edit&id=<%=passager.getIdPas() %>">Editer</a></td>
-				<td><a href="passager?action=delete&id=<%=passager.getIdPas() %>">Supprimer</a></td>
+			<td><a href="passager?action=delete&id=<%=passager.getIdPas() %>">Supprimer</a></td>  
 			</tr>
 		<% } %>
 		
 		<tr>
-			<td colspan="5"><a href="passager?action=add">Ajouter un passager</a></td>
+			<td colspan="6"><a href="passager?action=add">Ajouter un passager</a></td>
 		</tr>
 	</table>
+	
+	
 
 
 

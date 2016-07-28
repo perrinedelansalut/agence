@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="model.Passager"%>
+<%@ page import="model.Adresse"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,6 +44,21 @@
 	    {
 	    	prenomPassagerForm = prenomPassager;
 	    }
+	    
+  	    Adresse addPassager = passager.getAdresse();
+  	    String addPassagerForm;
+ 	    if (addPassager == null)
+	    {
+ 	    	addPassagerForm = "";
+ 	    }
+	    else
+ 	    {
+ 	    	addPassagerForm = addPassager.toString();
+ 	    }
+	    
+	    
+	    
+	    
 
 	%>
 	<fieldset>
@@ -65,7 +80,7 @@
 			<table>
 				<tr>
 					<td>Id</td>
-					<td><input type="text" name="id" value="<%=idPassForm%>"
+					<td><input type="text" name="id" value="<%=idPassForm%>" disabled="disabled"
 						<%if (idPassForm.equals(""))
             {
                 out.print("disabled");
@@ -85,7 +100,9 @@
 						value="<%=prenomPassagerForm%>" /></td>
 				</tr>
 				<tr>
-
+ 					<td>Adresse</td>
+ 					<td><input type="text" name="Adresse" 
+						value="<%=addPassagerForm%>" /></td> 
 				</tr>
 				<tr>
 					
