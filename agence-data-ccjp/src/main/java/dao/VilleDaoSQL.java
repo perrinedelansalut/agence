@@ -19,9 +19,9 @@ public class VilleDaoSQL implements VilleDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. Crï¿½er la connexion ï¿½ la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "password");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,24 +41,24 @@ public class VilleDaoSQL implements VilleDao {
 	public List<Ville> findAll() {
 		// Liste des villes que l'on va retourner
 		List<Ville> villes = new ArrayList<Ville>();
-		// Connexion à la BDD
+		// Connexion ï¿½ la BDD
 		try {
 			/*
-			 * Connexion à la BDD
+			 * Connexion ï¿½ la BDD
 			 */
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM ville");
-			// 4. Execution de la requête
+			// 4. Execution de la requï¿½te
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcoutuple de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeutuple des colonnes du tuple qui correspondent
+			// 5. Parcoutuple de l'ensemble des rï¿½sultats (ResultSet) pour
+			// rï¿½cupï¿½rer les valeutuple des colonnes du tuple qui correspondent
 			// aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
 				// Creation d'un objet Ville
 				Ville ville = new Ville(tuple.getInt("id"), tuple.getString("nom"));
-				// Ajout du nouvel objet Ville créé à la liste des villes
+				// Ajout du nouvel objet Ville crï¿½ï¿½ ï¿½ la liste des villes
 				villes.add(ville);
-			} // fin de la boucle de parcoutuple de l'ensemble des résultats
+			} // fin de la boucle de parcoutuple de l'ensemble des rï¿½sultats
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -68,16 +68,16 @@ public class VilleDaoSQL implements VilleDao {
 	}
 
 	public Ville findById(Integer id) {
-		// Déclaration d'un objet ville
+		// Dï¿½claration d'un objet ville
 		Ville ville = null;
 
 		try {
-			// Connexion à la BDD
+			// Connexion ï¿½ la BDD
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM ville where id=?");
 			// Cherche l'idVill voulu dans la BDD
 			ps.setInt(1, id);
 
-			// Récupération des résultats de la requête
+			// Rï¿½cupï¿½ration des rï¿½sultats de la requï¿½te
 			ResultSet tuple = ps.executeQuery();
 
 			if (tuple.next()) {

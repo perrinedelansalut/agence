@@ -22,9 +22,9 @@ public class AeroportDaoSQL implements AeroportDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. CrÃ©er la connexion Ã  la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,35 +43,35 @@ public class AeroportDaoSQL implements AeroportDao {
 	}
 
 	public List<Aeroport> findAll() {
-		// Liste des aéroports que l'on va retourner
+		// Liste des aÃ©roports que l'on va retourner
 		List<Aeroport> aeroports = new ArrayList<Aeroport>();
 		try {
 			/*
-			 * Connexion à la BDD
+			 * Connexion Ã  la BDD
 			 */
 
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM aeroport");
-			// 4. Execution de la requête
+			// 4. Execution de la requÃªte
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcoutuple de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeutuple des colonnes du tuple qui correspondent
+			// 5. Parcoutuple de l'ensemble des rÃ©sultats (ResultSet) pour
+			// rÃ©cupÃ©rer les valeutuple des colonnes du tuple qui correspondent
 			// aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
 				// Creation d'un objet Aeroport
 				Aeroport aeroport = new Aeroport(tuple.getInt("idAero"), tuple.getString("nom"));
-				// Ajout du nouvel objet Aeroport créé à la liste des aéroports
+				// Ajout du nouvel objet Aeroport crÃ©Ã© Ã  la liste des aÃ©roports
 				aeroports.add(aeroport);
-			} // fin de la boucle de parcoutuple de l'ensemble des résultats
+			} // fin de la boucle de parcoutuple de l'ensemble des rÃ©sultats
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// Retourne la liste de tous les aéroports
+		// Retourne la liste de tous les aÃ©roports
 		return aeroports;
 	}
 
 	public Aeroport findById(Integer idAero) {
-		// Déclaration d'un objet aeroport
+		// DÃ©claration d'un objet aeroport
 		Aeroport aeroport = null;
 		try {
 
@@ -79,7 +79,7 @@ public class AeroportDaoSQL implements AeroportDao {
 			// Cherche l'idAero voulu dans la BDD
 			ps.setInt(1, idAero);
 
-			// Récupération des résultats de la requête
+			// RÃ©cupÃ©ration des rÃ©sultats de la requÃªte
 			ResultSet tuple = ps.executeQuery();
 
 			if (tuple.next()) {

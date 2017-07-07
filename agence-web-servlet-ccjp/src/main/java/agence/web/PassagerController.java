@@ -25,7 +25,7 @@ public class PassagerController extends HttpServlet{
     {
     	//on teste si le parametre action est present dasn l'URL
         String action = request.getParameter("action") != null ? request.getParameter("action") : "list";
-        // si l'action demandé par le user est la liste des eleves
+        // si l'action demandÃ© par le user est la liste des eleves
         if (action.equals("list"))
         {   // je recupere la liste des eleves
             List<Passager> passagers = passagerDao.findAll();
@@ -33,7 +33,7 @@ public class PassagerController extends HttpServlet{
             request.setAttribute("passagers", passagers);
             // je dispache la requete vers la page elevesjsp
             RequestDispatcher rd = request.getRequestDispatcher("passagers.jsp");
-            //le ctrl fait suivre la requete et la reponse à la jsp
+            //le ctrl fait suivre la requete et la reponse Ã  la jsp
             rd.forward(request, response);
         }
         else if (action.equals("add"))
@@ -66,7 +66,7 @@ public class PassagerController extends HttpServlet{
             String prenom = "";
         try 
         {
-            // si l'id récupéré est non null, on parse
+            // si l'id rÃ©cupÃ©rÃ© est non null, on parse
 			if (idForm != null)
 			{
 			    id = Integer.parseInt(idForm);

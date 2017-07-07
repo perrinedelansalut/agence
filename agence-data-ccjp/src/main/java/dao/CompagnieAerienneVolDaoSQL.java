@@ -18,9 +18,9 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. CrÃ©er la connexion Ã  la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,16 +42,16 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 		List<CompagnieAerienneVol> compagnieaeriennevols = new ArrayList<CompagnieAerienneVol>();
 		VolDaoSql volDAO = new VolDaoSql();
 		CompagnieAerienneDaoSQL compagnieDAO = new CompagnieAerienneDaoSQL();
-		// Connexion à la BDD
+		// Connexion Ã  la BDD
 		try {
 			/*
-			 * Connexion à la BDD
+			 * Connexion Ã  la BDD
 			 */
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM compagnie_aerienne_vol");
-			// 4. Execution de la requête
+			// 4. Execution de la requÃªte
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcours de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeurs des colonnes du tuple qui correspondent aux
+			// 5. Parcours de l'ensemble des rÃ©sultats (ResultSet) pour
+			// rÃ©cupÃ©rer les valeurs des colonnes du tuple qui correspondent aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
 				// Creation d'un objet Aeroport
@@ -60,9 +60,9 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 				compagnieaeriennevol.setId(tuple.getInt("id"));
 				compagnieaeriennevol.setCompagnieAerienne(compagnieDAO.findById(tuple.getInt("idCompagnie")));
 				compagnieaeriennevol.setVol(volDAO.findById(tuple.getInt("idVol")));
-				// Ajout du nouvel objet Aeroport créé à la liste des élèves
+				// Ajout du nouvel objet Aeroport crÃ©Ã© Ã  la liste des Ã©lÃ¨ves
 				compagnieaeriennevols.add(compagnieaeriennevol);
-			} // fin de la boucle de parcours de l'ensemble des résultats
+			} // fin de la boucle de parcours de l'ensemble des rÃ©sultats
 
 			volDAO.fermetureConnexion();
 			compagnieDAO.fermetureConnexion();
@@ -70,7 +70,7 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// Retourne la liste de tous les aéroports
+		// Retourne la liste de tous les aÃ©roports
 		return compagnieaeriennevols;
 	}
 
@@ -81,10 +81,10 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 		try {
 
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM compagnie_aerienne_vol where id=?");
-			// Cherche l'idComp recherché dans la BDD
+			// Cherche l'idComp recherchÃ© dans la BDD
 			ps.setInt(1, id);
 
-			// Récupération des résultats de la requête
+			// RÃ©cupÃ©ration des rÃ©sultats de la requÃªte
 			ResultSet tuple = ps.executeQuery();
 
 			if (tuple.next()) {
@@ -109,7 +109,7 @@ public class CompagnieAerienneVolDaoSQL implements CompagnieAerienneVolDao {
 			PreparedStatement requete;
 			requete = connexion.prepareStatement(
 					"INSERT INTO compagnie_aerienne_vol (id, numero, idCompagnie, idVol, ouvert) VALUES(?,?,?,?,?)");
-			// set sur le paramètre 1
+			// set sur le paramÃ¨tre 1
 			requete.setInt(1, compagnieAerienneVol.getId());
 			requete.setString(2, compagnieAerienneVol.getNumero());
 			requete.setLong(3, compagnieAerienneVol.getCompagnieAerienne().getId());

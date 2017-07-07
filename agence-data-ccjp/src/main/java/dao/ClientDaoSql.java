@@ -20,9 +20,9 @@ public class ClientDaoSql implements ClientDao {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. Crï¿½er la connexion ï¿½ la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "password");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -46,14 +46,14 @@ public class ClientDaoSql implements ClientDao {
 		try {
 
 			/*
-			 * Connexion à la BDD
+			 * Connexion ï¿½ la BDD
 			 */
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM client");
 
-			// 4. Execution de la requête
+			// 4. Execution de la requï¿½te
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcoutuple de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeutuple des colonnes du tuple qui correspondent
+			// 5. Parcoutuple de l'ensemble des rï¿½sultats (ResultSet) pour
+			// rï¿½cupï¿½rer les valeutuple des colonnes du tuple qui correspondent
 			// aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
@@ -80,9 +80,9 @@ public class ClientDaoSql implements ClientDao {
 				// ListClients.get(i).setLog(loginDAO.findById(ListClients.get(i).getIdLog()));
 				// }
 
-				// Ajout du nouvel objet Client créé à la liste des clients
+				// Ajout du nouvel objet Client crï¿½ï¿½ ï¿½ la liste des clients
 				ListClients.add(objClient);
-			} // fin de la boucle de parcoutuple de l'ensemble des résultats
+			} // fin de la boucle de parcoutuple de l'ensemble des rï¿½sultats
 			adresseDAO.fermetureConnexion();
 			loginDAO.fermetureConnexion();
 
@@ -95,18 +95,18 @@ public class ClientDaoSql implements ClientDao {
 
 	@Override
 	public Client findById(Integer idCli) {
-		// Déclaration d'un objet Client
+		// Dï¿½claration d'un objet Client
 		Client objClient = null;
 		AdresseDaoSql adresseDAO = new AdresseDaoSql();
 		LoginDaoSql loginDAO = new LoginDaoSql();
 
 		try {
-			// Connexion à la BDD
+			// Connexion ï¿½ la BDD
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM client WHERE idClient=?");
 			// Cherche l'idVill voulu dans la BDD
 			ps.setInt(1, idCli);
 
-			// Récupération des résultats de la requête
+			// Rï¿½cupï¿½ration des rï¿½sultats de la requï¿½te
 			ResultSet tuple = ps.executeQuery();
 
 			if (tuple.next()) {

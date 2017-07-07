@@ -19,9 +19,9 @@ public class EscaleDaoSql implements EscaleDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. CrÃ©er la connexion Ã  la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,10 +46,10 @@ public class EscaleDaoSql implements EscaleDao {
 		try {
 			// connexion
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM escale");
-			// 4. Execution de la requête
+			// 4. Execution de la requÃªte
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcoutuple de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeutuple des colonnes du tuple qui correspondent
+			// 5. Parcoutuple de l'ensemble des rÃ©sultats (ResultSet) pour
+			// rÃ©cupÃ©rer les valeutuple des colonnes du tuple qui correspondent
 			// aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
@@ -63,9 +63,9 @@ public class EscaleDaoSql implements EscaleDao {
 				escale.setVol(volDAO.findById(tuple.getInt("idVol")));
 				// ajout des aeroports
 				escale.setAeoroport(aeroportDAO.findById(tuple.getInt("idAeroport")));
-				// Ajout du nouvel objet Aeroport créé à la liste des aéroports
+				// Ajout du nouvel objet Aeroport crÃ©Ã© Ã  la liste des aÃ©roports
 				escales.add(escale);
-			} // fin de la boucle de parcoutuple de l'ensemble des résultats
+			} // fin de la boucle de parcoutuple de l'ensemble des rÃ©sultats
 				// ajout des vols;
 
 			volDAO.fermetureConnexion();
@@ -74,7 +74,7 @@ public class EscaleDaoSql implements EscaleDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// Retourne la liste de tous les aéroports
+		// Retourne la liste de tous les aÃ©roports
 		return escales;
 	}
 
@@ -89,7 +89,7 @@ public class EscaleDaoSql implements EscaleDao {
 			// Cherche l'idVol voulu dans la BDD
 			ps.setInt(1, idEscale);
 
-			// Récupération des résultats de la requête
+			// RÃ©cupÃ©ration des rÃ©sultats de la requÃªte
 			ResultSet tuple = ps.executeQuery();
 
 			if (tuple.next()) {

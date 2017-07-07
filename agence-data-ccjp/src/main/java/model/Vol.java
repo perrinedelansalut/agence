@@ -16,19 +16,19 @@ public class Vol {
 	 */
 	private int idVol;
 	/**
-	 * date de départ du vol
+	 * date de dÃ©part du vol
 	 */
 	private Date dateDepart;
 	/**
-	 * date d'arrivé du vol
+	 * date d'arrivÃ© du vol
 	 */
 	private Date dateArrivee;
 	/**
-	 * heure départ du vol
+	 * heure dÃ©part du vol
 	 */
 	private Time heureDepart;
 	/**
-	 * heure d'arrivée du vol
+	 * heure d'arrivÃ©e du vol
 	 */
 	private Time heureArrivee;
 	private Aeroport aeroportDepart;
@@ -114,13 +114,13 @@ public class Vol {
 	}
 
 	public String toString() {
-		String reponse = "Le vol  de : " + this.aeroportDepart.getNom() + " qui part le " + this.dateDepart + " à "
-				+ this.heureDepart + "\n Arrivera à " + this.aeroportArrivee.getNom() + " à " + this.heureArrivee
-				+ "\nIl fera des escales à : ";
+		String reponse = "Le vol  de : " + this.aeroportDepart.getNom() + " qui part le " + this.dateDepart + " Ã  "
+				+ this.heureDepart + "\n Arrivera Ã  " + this.aeroportArrivee.getNom() + " Ã  " + this.heureArrivee
+				+ "\nIl fera des escales Ã  : ";
 		for (int i =0; i < escales.size(); i++) {
 			reponse += "\n" + this.escales.get(i).getAeoroport().getNom() + " le "
-					+ this.escales.get(i).getDateArrivee() + " à " + this.escales.get(i).getHeureArrivee() + "jusqu'au"
-					+ this.escales.get(i).getDateDepart() + " à " + this.escales.get(i).getHeureDepart();
+					+ this.escales.get(i).getDateArrivee() + " Ã  " + this.escales.get(i).getHeureArrivee() + "jusqu'au"
+					+ this.escales.get(i).getDateDepart() + " Ã  " + this.escales.get(i).getHeureDepart();
 		}
 
 		return reponse;

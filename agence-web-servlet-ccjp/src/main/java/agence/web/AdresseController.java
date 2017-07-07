@@ -21,17 +21,17 @@ public class AdresseController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// on teste si le paramètre action est présent dans l'URL
+		// on teste si le paramÃ¨tre action est prÃ©sent dans l'URL
 		String action = request.getParameter("action") != null ? request.getParameter("action") : "list";
-		// si l'action demandée par le user est la liste des élèves
+		// si l'action demandÃ©e par le user est la liste des Ã©lÃ¨ves
 		if (action.equals("list")) {
-			// je récupère la liste des adresses
+			// je rÃ©cupÃ¨re la liste des adresses
 			List<Adresse> adresses = adresseDao.findAll();
 			// je la charge dans le request
 			request.setAttribute("adresses", adresses);
-			// je prépare le dispatche de la requête vers ma page adresses.jsp
+			// je prÃ©pare le dispatche de la requÃªte vers ma page adresses.jsp
 			RequestDispatcher rd = request.getRequestDispatcher("adresses.jsp");
-			// le ctrl fait suivre la requête et la réponse à la jsp
+			// le ctrl fait suivre la requÃªte et la rÃ©ponse Ã  la jsp
 			rd.forward(request, response);
 		} else if (action.equals("add")) {
 			request.setAttribute("adresse", new Adresse());
@@ -60,7 +60,7 @@ public class AdresseController extends HttpServlet {
 			String pays = "";
 
 			try {
-				// si l'id récupéré est non null, on parse
+				// si l'id rÃ©cupÃ©rÃ© est non null, on parse
 				if (idAddForm != null) {
 					id = Integer.parseInt(idAddForm);
 				}

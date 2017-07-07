@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="model.Adresse"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Edition des passagers</title>
 </head>
 <body>
@@ -66,7 +66,7 @@
 			<%
 			    if (idPassForm.equals(""))
 			    {
-			        out.print("Création");
+			        out.print("CrÃ©ation");
 			    }
 			    else
 			    {
@@ -95,7 +95,7 @@
 				</tr>
 				<tr>
 				
-					<td>Prénom</td>
+					<td>PrÃ©nom</td>
 					<td><input type="text" name="prenom"
 						value="<%=prenomPassagerForm%>" /></td>
 				</tr>

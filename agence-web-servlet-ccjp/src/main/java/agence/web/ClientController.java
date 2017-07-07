@@ -21,17 +21,17 @@ public class ClientController extends HttpServlet {
 	private ClientDao clientDao = new ClientDaoSql();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {	//On teste si le paramètre action est présent dans l'url
+    {	//On teste si le paramÃ¨tre action est prÃ©sent dans l'url
         String action = request.getParameter("action") != null ? request.getParameter("action") : "list";
-        //si l'action demandée par le user est la liste des clients
+        //si l'action demandÃ©e par le user est la liste des clients
         if (action.equals("list"))
-        {	//je récupère la liste des clients
+        {	//je rÃ©cupÃ¨re la liste des clients
             List<Client> clients = clientDao.findAll();
             //je la charge dans l'objet request
             request.setAttribute("clients", clients);
-            //je prépare le dispatche de la requète vers ma page clients.jsp
+            //je prÃ©pare le dispatche de la requÃ¨te vers ma page clients.jsp
             RequestDispatcher rd = request.getRequestDispatcher("clients.jsp");
-            //le controller fait suivre la requête et la réponse à la jsp
+            //le controller fait suivre la requÃªte et la rÃ©ponse Ã  la jsp
             rd.forward(request, response);
         }
         else if (action.equals("add"))
@@ -69,7 +69,7 @@ public class ClientController extends HttpServlet {
 
             try
             {
-                // si l'id récupéré est non null, on parse
+                // si l'id rÃ©cupÃ©rÃ© est non null, on parse
                 if (idForm != null)
                 {
                     id = Integer.parseInt(idForm);

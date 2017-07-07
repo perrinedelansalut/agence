@@ -3,56 +3,56 @@ package dao;
 import java.util.List;
 
 /**
- * Contrat que tous les DAO vont devoir respecter. Il contient les opérations
+ * Contrat que tous les DAO vont devoir respecter. Il contient les opÃ©rations
  * CRUD de base
  * 
  * @author Eric Sultan
  *
  * @param <BO>
- *            L'objet métier générique
+ *            L'objet mÃ©tier gÃ©nÃ©rique
  * @param <PK>
- *            Le type de clé primaire générique
+ *            Le type de clÃ© primaire gÃ©nÃ©rique
  */
 public interface Dao<BO, PK> {
 
 	/**
-	 * Retourne un objet métier en fonction de sa clé primaire
+	 * Retourne un objet mÃ©tier en fonction de sa clÃ© primaire
 	 * 
 	 * @param id
-	 *            Clé primaire
-	 * @return L'objet métier trouvé
+	 *            ClÃ© primaire
+	 * @return L'objet mÃ©tier trouvÃ©
 	 */
 	BO findById(PK id);
 
 	/**
-	 * Retourne tous les objets métiers d'un type donné de la source de données
+	 * Retourne tous les objets mÃ©tiers d'un type donnÃ© de la source de donnÃ©es
 	 * 
-	 * @return La liste des objets métiers
+	 * @return La liste des objets mÃ©tiers
 	 */
 	List<BO> findAll();
 
 	/**
-	 * Crée un nouvel objet métier afin de le persister
+	 * CrÃ©e un nouvel objet mÃ©tier afin de le persister
 	 * 
 	 * @param obj
-	 *            L'objet à persister
+	 *            L'objet Ã  persister
 	 */
 	void create(BO obj);
 
 	/**
-	 * Retourne un objet métier mis à jour
+	 * Retourne un objet mÃ©tier mis Ã  jour
 	 * 
 	 * @param obj
-	 *            L'objet à mettre à jour
-	 * @return L'objet métier mis à jour
+	 *            L'objet Ã  mettre Ã  jour
+	 * @return L'objet mÃ©tier mis Ã  jour
 	 */
 	BO update(BO obj);
 
 	/**
-	 * Supprime un objet métier de la source de données
+	 * Supprime un objet mÃ©tier de la source de donnÃ©es
 	 * 
 	 * @param obj
-	 *            L'objet à supprimer
+	 *            L'objet Ã  supprimer
 	 */
 	void delete(BO obj);
 }

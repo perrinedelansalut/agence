@@ -3,12 +3,12 @@ package model;
 public class CompagnieAerienne {
 	
 	/**
-	 * Id de la compagnie aérienne
+	 * Id de la compagnie aÃ©rienne
 	 */
 	private int id;
 	
 	/**
-	 * Nom de la compagnie aérienne
+	 * Nom de la compagnie aÃ©rienne
 	 */
 	private String nom;
 

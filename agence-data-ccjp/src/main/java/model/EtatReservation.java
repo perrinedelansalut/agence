@@ -1,7 +1,7 @@
 package model;
 
 public enum EtatReservation {
-	ouvert("Ouvert"), ferme("Fermé");
+	ouvert("Ouvert"), ferme("FermÃ©");
 	
 	private final String label;
 	

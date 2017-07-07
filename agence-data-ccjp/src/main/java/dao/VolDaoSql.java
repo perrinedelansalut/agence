@@ -17,7 +17,7 @@ public class VolDaoSql implements VolDao {
 
 	public VolDaoSql() {
 		/*
-		 * Connexion à la BDD
+		 * Connexion ï¿½ la BDD
 		 */
 		// 1. Chargement du driver
 		try {
@@ -26,14 +26,14 @@ public class VolDaoSql implements VolDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 2. Créer la connexion à la base (on instancie l'objet connexion)
+		// 2. Crï¿½er la connexion ï¿½ la base (on instancie l'objet connexion)
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "root", "");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/vol", "user", "password");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 3. Création d'une requête (statement) à partir de l'objet
+		// 3. Crï¿½ation d'une requï¿½te (statement) ï¿½ partir de l'objet
 		// connexion
 	}
 
@@ -48,16 +48,16 @@ public class VolDaoSql implements VolDao {
 	public List<Vol> findAll() {
 		// Liste des vols que l'on va retourner
 		List<Vol> vols = new ArrayList<Vol>();
-		// Création d'un objet aeroport pour faire un findbyid;
+		// Crï¿½ation d'un objet aeroport pour faire un findbyid;
 		AeroportDaoSQL aeroportDAO = new AeroportDaoSQL();
-		// Connexion à la BDD
+		// Connexion ï¿½ la BDD
 		try {
 
 			PreparedStatement ps = connexion.prepareStatement("SELECT * FROM vol");
-			// 4. Execution de la requête
+			// 4. Execution de la requï¿½te
 			ResultSet tuple = ps.executeQuery();
-			// 5. Parcoutuple de l'ensemble des résultats (ResultSet) pour
-			// récupérer les valeutuple des colonnes du tuple qui correspondent
+			// 5. Parcoutuple de l'ensemble des rï¿½sultats (ResultSet) pour
+			// rï¿½cupï¿½rer les valeutuple des colonnes du tuple qui correspondent
 			// aux
 			// valeur des attributs de l'objet
 			while (tuple.next()) {
@@ -69,9 +69,9 @@ public class VolDaoSql implements VolDao {
 				vol.setHeureDepart(tuple.getTime("heureDepart"));
 				vol.setAeroportArrivee(aeroportDAO.findById(tuple.getInt("idAeroportArrivee")));
 				vol.setAeroportDepart(aeroportDAO.findById(tuple.getInt("idAeroportDepart")));
-				// Ajout du nouvel objet vol créé à la liste des vols
+				// Ajout du nouvel objet vol crï¿½ï¿½ ï¿½ la liste des vols
 				vols.add(vol);
-			} // fin de la boucle de parcoutuple de l'ensemble des résultats
+			} // fin de la boucle de parcoutuple de l'ensemble des rï¿½sultats
 
 			// fermeture de la base aeroport
 			aeroportDAO.fermetureConnexion();
@@ -80,14 +80,14 @@ public class VolDaoSql implements VolDao {
 			e.printStackTrace();
 		}
 
-		// Retourne la liste de tous les aéroports
+		// Retourne la liste de tous les aï¿½roports
 		return vols;
 	}
 
 	public Vol findById(Integer idVol) {
-		// Déclaration d'un objet vol
+		// Dï¿½claration d'un objet vol
 		Vol vol = null;
-		// Création d'un objet aeroport pour faire un findbyid;
+		// Crï¿½ation d'un objet aeroport pour faire un findbyid;
 		AeroportDaoSQL aeroportDAO = new AeroportDaoSQL();
 
 		try {
@@ -95,7 +95,7 @@ public class VolDaoSql implements VolDao {
 			// Cherche l'idVol voulu dans la BDD
 			requete.setInt(1, idVol);
 
-			// Récupération des résultats de la requête
+			// Rï¿½cupï¿½ration des rï¿½sultats de la requï¿½te
 			ResultSet tuple = requete.executeQuery();
 
 			if (tuple.next()) {

@@ -5,19 +5,19 @@ import java.util.Date;
 public class Reservation {
 
 	/**
-	 * Id de la réservation
+	 * Id de la rÃ©servation
 	 */
 	private int idRes;
 	/**
-	 * Date de la réservation
+	 * Date de la rÃ©servation
 	 */
 	private Date date;
 	/**
-	 * Numéro de la réservation
+	 * NumÃ©ro de la rÃ©servation
 	 */
 	private int numero;
 	/**
-	 * Etat de la réservation (ouvert ou fermé)
+	 * Etat de la rÃ©servation (ouvert ou fermÃ©)
 	 */
 	private EtatReservation etat;
 	/**
@@ -34,7 +34,7 @@ public class Reservation {
 	private int idCli;
 
 	/**
-	 * Vol associé à la réservation
+	 * Vol associÃ© Ã  la rÃ©servation
 	 */
 	private Vol vol;
 	private Passager passager;
@@ -125,8 +125,8 @@ public class Reservation {
 	}
 
 	public String toString() {
-		String reponse = "La Reservation : " + this.numero + " a été effectuée par le Client : \n" + client.getNom()
-				+ " " + client.getPrenom() + "\nElle porte sur le vol de " + vol.getAeroportDepart().getNom() + " à "
+		String reponse = "La Reservation : " + this.numero + " a Ã©tÃ© effectuÃ©e par le Client : \n" + client.getNom()
+				+ " " + client.getPrenom() + "\nElle porte sur le vol de " + vol.getAeroportDepart().getNom() + " Ã  "
 				+ vol.getAeroportArrivee().getNom() + ".\nElle concerne le passager :\n" + passager.getNom() + " "
 				+ passager.getPrenom();
 
