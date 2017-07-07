@@ -2,6 +2,7 @@ package dao;
 
 import model.CompagnieAerienne;
 
-public interface CompagnieAerienneDao extends Dao<CompagnieAerienne, Integer> {
+public interface CompagnieAerienneDao extends Dao<CompagnieAerienne, Integer>
+{
 
 }

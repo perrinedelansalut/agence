@@ -5,67 +5,74 @@ package model;
 
 /**
  * @author ajc
- *
  */
-public class Login {
+public class Login
+{
 
-	/**
-	 * 
-	 */
-	private int idLog;
-	private String Login;
-	private String motDePasse;
-	private int admin;
-	
-	
-	
-	public Login() {
-		
-	}
-	
-	public Login(int idLog)
-	{
-		this();
-		this.idLog = idLog;
-	}
+    /**
+     * 
+     */
+    private int idLog;
+    private String Login;
+    private String motDePasse;
+    private int admin;
 
-	public int getIdLog() {
-		return idLog;
-	}
+    public Login()
+    {
 
-	public void setIdLog(int idLog) {
-		this.idLog = idLog;
-	}
+    }
 
-	public String getLogin() {
-		return Login;
-	}
+    public Login(int idLog)
+    {
+        this();
+        this.idLog = idLog;
+    }
 
-	public void setLogin(String login) {
-		Login = login;
-	}
+    public int getIdLog()
+    {
+        return idLog;
+    }
 
-	public String getMotDePasse() {
-		return motDePasse;
-	}
+    public void setIdLog(int idLog)
+    {
+        this.idLog = idLog;
+    }
 
-	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
-	}
+    public String getLogin()
+    {
+        return Login;
+    }
 
-	public int getAdmin() {
-		return admin;
-	}
+    public void setLogin(String login)
+    {
+        Login = login;
+    }
 
-	public void setAdmin(int admin) {
-		this.admin = admin;
-	}
+    public String getMotDePasse()
+    {
+        return motDePasse;
+    }
 
-	@Override
-	public String toString() {
-		return "Login [idLog=" + idLog + ", Login=" + Login + ", motDePasse=" + motDePasse + ", admin=" + admin + "]";
-	}
-	
-	
+    public void setMotDePasse(String motDePasse)
+    {
+        this.motDePasse = motDePasse;
+    }
+
+    public int getAdmin()
+    {
+        return admin;
+    }
+
+    public void setAdmin(int admin)
+    {
+        this.admin = admin;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Login [idLog=" + idLog + ", Login=" + Login + ", motDePasse="
+                + motDePasse + ", admin=" + admin + "]";
+    }
 
 }

@@ -2,6 +2,7 @@ package dao;
 
 import model.Reservation;
 
-public interface ReservationDao extends Dao<Reservation, Integer> {
+public interface ReservationDao extends Dao<Reservation, Integer>
+{
 
 }

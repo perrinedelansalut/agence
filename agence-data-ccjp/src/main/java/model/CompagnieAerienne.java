@@ -1,41 +1,48 @@
 package model;
 
-public class CompagnieAerienne {
-	
-	/**
-	 * Id de la compagnie aérienne
-	 */
-	private int id;
-	
-	/**
-	 * Nom de la compagnie aérienne
-	 */
-	private String nom;
+public class CompagnieAerienne
+{
 
-	public CompagnieAerienne(int id, String nom) {
-		this.id = id;
-		this.nom = nom;
-	}
+    /**
+     * Id de la compagnie aérienne
+     */
+    private int id;
 
-	public int getId() {
-		return id;
-	}
+    /**
+     * Nom de la compagnie aérienne
+     */
+    private String nom;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public CompagnieAerienne(int id, String nom)
+    {
+        this.id = id;
+        this.nom = nom;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public int getId()
+    {
+        return id;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public void setId(int id)
+    {
+        this.id = id;
+    }
 
-	@Override
-	public String toString() {
-		return "CompagnieAerienne [id=" + id + ", nom=" + nom + "]";
-	}
+    public String getNom()
+    {
+        return nom;
+    }
+
+    public void setNom(String nom)
+    {
+        this.nom = nom;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "CompagnieAerienne [id=" + id + ", nom=" + nom + "]";
+    }
 
 }

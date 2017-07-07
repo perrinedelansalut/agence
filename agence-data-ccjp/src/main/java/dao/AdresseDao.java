@@ -7,12 +7,12 @@ import model.Adresse;
 
 /**
  * @author ajc
- *
  */
-public interface AdresseDao extends Dao<Adresse, Integer> {
+public interface AdresseDao extends Dao<Adresse, Integer>
+{
 
-	/**
-	 * 
-	 */
-	public Adresse findById(Integer idAdd);
+    /**
+     * 
+     */
+    public Adresse findById(Integer idAdd);
 }

@@ -1,42 +1,49 @@
 package model;
 
-public class Ville {
-	
-	/**
-	 * Id de la ville
-	 */
-	private int idVil;
-	
-	/**
-	 * Nom de la ville
-	 */
-	private String nom;
+public class Ville
+{
 
-	public Ville(int idVil, String nom) {
-		this.idVil = idVil;
-		this.nom = nom;
-		}
+    /**
+     * Id de la ville
+     */
+    private int idVil;
 
-	public int getIdVil() {
-		return idVil;
-	}
+    /**
+     * Nom de la ville
+     */
+    private String nom;
 
-	public void setIdVil(int idVil) {
-		this.idVil = idVil;
-	}
+    public Ville(int idVil, String nom)
+    {
+        this.idVil = idVil;
+        this.nom = nom;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public int getIdVil()
+    {
+        return idVil;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	
-	public String toString() {
-		String reponse="La Ville : "+this.nom;
-				
-		return reponse;
-}
+    public void setIdVil(int idVil)
+    {
+        this.idVil = idVil;
+    }
+
+    public String getNom()
+    {
+        return nom;
+    }
+
+    public void setNom(String nom)
+    {
+        this.nom = nom;
+    }
+
+    public String toString()
+    {
+        String reponse = "La Ville : " + this.nom;
+
+        return reponse;
+    }
 
 }

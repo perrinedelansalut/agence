@@ -7,8 +7,8 @@ import model.Login;
 
 /**
  * @author ajc
- *
  */
-public interface LoginDao extends Dao<Login, Integer> {
+public interface LoginDao extends Dao<Login, Integer>
+{
 
 }
